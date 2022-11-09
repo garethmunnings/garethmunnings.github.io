@@ -1,9 +1,9 @@
-const PADDING = 100;
+const PADDING = 610;
 const ROWS = 70;
 const COLUMNS = 70;
 const CELL_SIZE = 10;
-const CANVAS_WIDTH = 900;
-const CANVAS_HEIGHT = 1000;
+const CANVAS_WIDTH = 1920;
+const CANVAS_HEIGHT = 961;
 const CANVAS_COLOR = 0;
 const colours = new Array(200,22,22 , 245,90,1 , 255,206,1 , 100,212,12 , 50,120,12 , 70,75,224 , 70,232,250 ,  147,60,0 , 22,22,22 ,  220,220,220);
 let CELL_COLOR1;
@@ -31,7 +31,7 @@ function setup() {
   for (let col=0;col<10;col++) 
   {
     fill(colours[col*3], colours[col*3+1], colours[col*3+2]);
-    let left = 100+(col*70);
+    let left = PADDING+(col*70);
     let top = 70;
     let size = 64;
     rect(left, top, size, size);    
@@ -42,13 +42,13 @@ function mouseClicked()
   {
     if(mouseY >= 70 && mouseY <= 134)
     {      
-      let pos = Math.floor((mouseX - 100)/70);           
+      let pos = Math.floor((mouseX - PADDING)/70);           
       CELL_COLOR1 = colours[pos*3];
       CELL_COLOR2 = colours[pos*3+1];
       CELL_COLOR3 = colours[pos*3+2];      
       fill(CELL_COLOR1, CELL_COLOR2, CELL_COLOR3);      
     }
-    else if(mouseY >= 200 && mouseY <= 899 && mouseX >= 100 && mouseX <= 799)
+    else if(mouseY >= 200 && mouseY <= 899 && mouseX >= PADDING && mouseX <= PADDING+699)
     {      
       fill(CELL_COLOR1, CELL_COLOR2, CELL_COLOR3);
       let x = mouseX - (mouseX % 10);
@@ -70,7 +70,7 @@ function mouseClicked()
       CELL_COLOR3 = colours[pos*3+2];      
       fill(CELL_COLOR1, CELL_COLOR2, CELL_COLOR3);      
     }
-    else if(mouseY >= 210 && mouseY <= 899 && mouseX >= 100 && mouseX <= 789)
+    else if(mouseY >= 210 && mouseY <= 899 && mouseX >= PADDING && mouseX <= PADDING+689)
     {      
       fill(CELL_COLOR1, CELL_COLOR2, CELL_COLOR3);
       let x = mouseX - (mouseX % 10);
